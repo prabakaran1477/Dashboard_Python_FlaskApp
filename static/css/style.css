@@ -5,13 +5,9 @@ box-sizing: border-box;
 *:focus {
 	outline: none;
 }
-body {
-font-family: Arial;
-background-color: #3498DB;
-padding: 50px;
-}
+
 .login {
-margin: 20px auto;
+margin: 270px auto;
 width: 300px;
 }
 .login-screen {
@@ -75,4 +71,28 @@ box-shadow: none;
   color: #444;
   display: block;
 	margin-top: 12px;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* The only rule that matters */
+#video-background {
+/*  making the video fullscreen  */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
 }

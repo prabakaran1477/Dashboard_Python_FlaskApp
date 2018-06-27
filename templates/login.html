@@ -1,15 +1,35 @@
-<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"  type="text/css">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}"  type="text/css">
+
+
+</head>
+<body>
+
+
+
 {% block body %}
 {% if session['logged_in'] %}
 <p>You're logged in already!</p>
 {% else %}
 
 
-<form action="/" method="POST">
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="..\static\video\MeritDataCode.mp4" type="video/mp4">
+</video>
+
+
+<form action="/login" method="POST">
 	<div class="login">
 		<div class="login-screen">
 			<div class="app-title">
-				<h1>Login</h1>
+				<h2  class="text-primary">Argusmedia Scraper Access</h2>
 			</div>
 
 			<div class="login-form">
@@ -32,3 +52,17 @@
 
 {% endif %}
 {% endblock %}
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 mt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright & Support by:
+    <a href="https://www.meritgroup.co.uk/">Merit Software Services Pvt Lt</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</body>
+</html>
