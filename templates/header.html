@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="..\static\js\jQuery-main.js"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid text-center p-3 mb-2 bg-primary text-white">
+	<!--<video autoplay muted loop id="myVideo">
+	  <source src="..\static\video\MeritDataCode.mp4" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video> -->
+
+  <h1 >Argusmedia Scraper Dashboard</h1>
+  <p>Powered by Merit Software Services!</p>
+</div><br>
+
+<!--Logout button container-fluid-->
+<div class="container-fluid">
+<div id="logout" class="text-right">
+<a href="/logout" class="btn btn-info btn-lg "><span class="glyphicon glyphicon-log-out"></span>Logout</a></div>
+</div>
+<!--End of Logout button container-fluid-->
+
+
+
+
+<div class="container-fluid">
+  <h3>Status Tabs</h3>
+  <ul class="nav nav-tabs">
+    <li><a  href="/" class="btn btn-primary">All Scrapers - ({{count["All_Scrapers"]}})</a></li>
+	<li><a href="/menu1" class="btn btn-info">Active - ({{count["active_status"]}})</a></li>
+    <li><a  href="/menu2" class="btn btn-success">Running* - ({{count["running_status"]}})</a></li>
+    <li><a  href="/menu3" class="btn btn-warning">Error - ({{count["error_status"]}})</a></li>
+    <li><a  href="/menu4" class="btn btn-danger">Inactive - ({{count["inactive_status"]}})</a></li>
+  </ul>

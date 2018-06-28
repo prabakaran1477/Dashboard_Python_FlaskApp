@@ -5,6 +5,7 @@ import os
 import time
 from argus_v1.FlaskApp.helper import *
 
+
 app = Flask(__name__)
 
 
@@ -15,7 +16,9 @@ def home():
         return render_template('login.html')
     else:
         mydata = json.loads(dashboard_data())
-        return render_template('data_publisher.html',mydata = mydata)
+        count= json.loads(scraper_count())
+        print('scraper_count',count)
+        return render_template('data_publisher.html',mydata = mydata,count = count[0])
         # return render_template('dashboard.html')
 
 
@@ -49,7 +52,8 @@ def dashboard_data_tabs1():
     try:
         if session.get('logged_in'):
             mydata = json.loads(active_status())
-            return render_template('tab1.html', active_status=mydata)
+            count = json.loads(scraper_count())
+            return render_template('tab1.html', active_status=mydata,count = count[0])
             # return render_template('dashboard.html')
         else:
             home_page()
@@ -62,7 +66,8 @@ def dashboard_data_tabs2():
     try:
         if session.get('logged_in'):
             mydata = json.loads(running_status())
-            return render_template('tab2.html', running_status=mydata)
+            count = json.loads(scraper_count())
+            return render_template('tab2.html', running_status=mydata,count = count[0])
             # return render_template('dashboard.html')
         else:
             home_page()
@@ -75,7 +80,8 @@ def dashboard_data_tabs3():
     try:
         if session.get('logged_in'):
             mydata = json.loads(error_status())
-            return render_template('tab3.html', error_status=mydata)
+            count = json.loads(scraper_count())
+            return render_template('tab3.html', error_status=mydata,count = count[0])
             # return render_template('dashboard.html')
         else:
             home_page()
@@ -88,7 +94,8 @@ def dashboard_data_tabs4():
     try:
         if session.get('logged_in'):
             mydata = json.loads(inactive_status())
-            return render_template('tab4.html', inactive_status=mydata)
+            count = json.loads(scraper_count())
+            return render_template('tab4.html', inactive_status=mydata,count = count[0])
             # return render_template('dashboard.html')
         else:
             home_page()
