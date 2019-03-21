@@ -11,9 +11,9 @@ app.debug = True
 
 mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = '#y5ql@M!n@2017'
-app.config['MYSQL_DATABASE_DB'] = 'fundalytics'
-app.config['MYSQL_DATABASE_HOST'] = 'CH1030BD04'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'xxxxxxxx'
+app.config['MYSQL_DATABASE_DB'] = 'tttttttttt'
+app.config['MYSQL_DATABASE_HOST'] = 'kkkkkkkk'
 mysql.init_app(app)
 
 
